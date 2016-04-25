@@ -1,0 +1,55 @@
+<%# <div class="navbar-fixed"> <nav> <div class="nav-wrapper"> <a href="#!" class="brand-logo"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/725-200.png"></a> <ul class="right hide-on-med-and-down"> <li><a href="sass.html">Sass</a></li> <li><a
+href="badges.html">Components</a></li> </ul> </div> </nav> </div>%>
+
+<nav class="navbar navbar-dark custom-bg">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/725-200.png"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="active" href="./">
+                        <span class="glyphicon glyphicon-print"></span>
+                        Vote!
+                    </a>
+                </li>
+                <li>
+                    <a class="active" href="./standings">
+                        <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+                        Standings
+                    </a>
+                </li>
+                <li>
+                    <a class="active" data-toggle="modal" href="#addpics">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Add Pic
+                    </a>
+                </li>
+                <li>
+                    <form class="new-user" action="./reset" method="post">
+                        <!-- <span class="glyphicon glyphicon-user space"></span> -->
+                        <input class="btn btn-info user-input" type="submit" value="New User"/>
+                    </form>
+                </li>
+                <li>
+                    <form class="new-user" action="./reset" method="post">
+                        <!-- <span class="glyphicon glyphicon-refresh space"></span> -->
+                        <input class="btn btn-info user-input" type="submit" value="Reset Images"/>
+                    </form>
+                </li>
+            </ul>
+        </form>
+        ​
+    </div>
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container-fluid -->
+</nav>

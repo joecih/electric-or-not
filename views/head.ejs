@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Head</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css">
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="stylesheets/demo.css" />
+        <link rel="stylesheet" href="stylesheets/slitslider.css">
+        <link rel="stylesheet" href="stylesheets/custom.css">
+
+        <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    </head>
+    <body>
+
+        <!-- Compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/slitslider/modernizr.custom.79639.js"></script>
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="stylesheets/styleNoJS.css"/>
+        </noscript>
+        <script type="text/javascript" src="js/slitslider/jquery.ba-cond.min.js"></script>
+        <script type="text/javascript" src="js/slitslider/jquery.slitslider.js"></script>
+        <script type="text/javascript">
+            $(function() {
+
+                var Page = (function() {
+                    var $navArrows = $('#nav-arrows'),
+                        $nav = $('#nav-dots > span'),
+                        slitslider = $('#slider').slitslider({
+                            onBeforeChange: function(slide, pos) {
+                                $nav.removeClass('nav-dot-current');
+                                $nav.eq(pos).addClass('nav-dot-current');
+                            }
+                        }),
+                        init = function() {
+                            initEvents();
+
+                        },
+                        initEvents = function() {
+                            // add navigation events
+                            $navArrows.children(':last').on('click', function() {
+                                slitslider.next();
+                                return false;
+                            });
+                            $navArrows.children(':first').on('click', function() {
+
+                                slitslider.previous();
+                                return false;
+                            });
+                            $nav.each(function(i) {
+
+                                $(this).on('click', function(event) {
+
+                                    var $dot = $(this);
+
+                                    if (!slitslider.isActive()) {
+                                        $nav.removeClass('nav-dot-current');
+                                        $dot.addClass('nav-dot-current');
+
+                                    }
+
+                                    slitslider.jump(i + 1);
+                                    return false;
+
+                                });
+
+                            });
+                        };
+                    return {init: init};
+                })();
+                Page.init();
+            });
+        </script>
+    </body>
+</html>
