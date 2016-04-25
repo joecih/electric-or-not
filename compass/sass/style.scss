@@ -1,0 +1,31 @@
+#map {
+  height: 96vh;
+  width: 80%;
+  float: left;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px black;
+}
+#map-panel {
+  height: 100vh;
+  width: 10%;
+  float: left;
+  text-align: center;
+  font-family: verdana;
+  font-size: 10px;
+
+  .blue-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #4099ff;
+    box-shadow: 1px 1px 5px black;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    padding: 5px 10px;
+  }
+  li {
+    list-style: none;
+    padding-bottom: 5px;
+  }
+}
