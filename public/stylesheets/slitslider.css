@@ -22,7 +22,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-} 
+}
 
 .sl-slide {
 	z-index: 1;
@@ -111,4 +111,7 @@
 .sl-slide-vertical .sl-slide-inner {
 	background: #ccc;
 }
-
+.sl-slide-inner img {
+	width: 100vw;
+	height: 100vh;
+}

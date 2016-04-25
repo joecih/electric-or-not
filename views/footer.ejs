@@ -1,5 +1,19 @@
 <footer class="footer custom-bg">
   <div class="container">
-    <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+
+    <form class="form-inline" role="form">
+      <div class="form-group" action="./electric" method="post">
+          <input type="hidden" name="photo" value="peel">
+          <input type="submit" voter="vote-actions" class="btn btn-info" value="Electric!">
+      </div>
+      <div class="form-group" action="poser" method="post">
+        <input type="hidden" name="photo" value="peel">
+        <input type="submit" voter="vote-actions" class="btn btn-info" Value="Poser">
+      </div>
+    </form>
+
+
+
+    <%# <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>%>
   </div>
 </footer>

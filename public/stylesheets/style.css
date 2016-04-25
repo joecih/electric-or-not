@@ -1,56 +1,90 @@
+/* line 1, ../../compass/sass/_home.scss */
+html,
+body {
+  position: relative;
+  height: 100vh;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
 /* Wrapper for page content to push down footer */
 /* line 4, ../../compass/sass/style.scss */
 #wrap {
-  min-height: 100%;
   /* Negative indent footer by it's height */
-  position: relative;
-  height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 90%;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */
-/* line 24, ../../compass/sass/style.scss */
+/* line 25, ../../compass/sass/style.scss */
 .footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: red;
+  z-index: 2;
 }
 
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
-/* line 38, ../../compass/sass/style.scss */
+/* line 39, ../../compass/sass/style.scss */
 #wrap > .container {
   padding-top: 60px;
 }
 
-/* line 41, ../../compass/sass/style.scss */
+/* line 42, ../../compass/sass/style.scss */
 .container .credit {
   margin: 20px 0;
 }
 
-/* line 45, ../../compass/sass/style.scss */
+/* line 46, ../../compass/sass/style.scss */
 code {
   font-size: 80%;
 }
 
-/* line 49, ../../compass/sass/style.scss */
+/* line 50, ../../compass/sass/style.scss */
 #photo img {
   width: 400px;
 }
 
-/* line 53, ../../compass/sass/style.scss */
-.navbar-brand img {
-  width: 40px;
+/* line 54, ../../compass/sass/style.scss */
+.navbar-brand {
+  padding: 4px 15px;
 }
 
 /* line 57, ../../compass/sass/style.scss */
-.navbar {
-  margin: 0;
+.navbar-brand img {
+  width: 46px;
 }
 
 /* line 60, ../../compass/sass/style.scss */
+.navbar-nav > li {
+  padding-right: 5px;
+}
+
+/* line 63, ../../compass/sass/style.scss */
+.navbar {
+  margin: 0;
+  border-radius: 0;
+  line-height: 50px;
+}
+
+/* line 68, ../../compass/sass/style.scss */
+.footer.custom-bg {
+  padding: 10px;
+}
+
+/* line 71, ../../compass/sass/style.scss */
 .custom-bg {
-  background-color: #32301b;
+  background-color: darkgray;
+  text-align: center;
+}
+/* line 74, ../../compass/sass/style.scss */
+.custom-bg input[voter="vote-actions"] {
+  width: 100px;
+  box-shadow: 1px 1px 5px black;
+  color: darkblue;
+  font-weight: bold;
+  font-size: 20px;
 }
