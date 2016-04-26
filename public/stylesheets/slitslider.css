@@ -22,6 +22,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
+	text-align: center;
 }
 
 .sl-slide {
@@ -112,6 +113,6 @@
 	background: #ccc;
 }
 .sl-slide-inner img {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	margin: 0 auto;
 }

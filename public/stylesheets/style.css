@@ -3,6 +3,7 @@ html,
 body {
   position: relative;
   height: 100vh;
+  overflow: hidden;
   /* The html and body elements cannot have any padding or margin. */
 }
 
@@ -20,6 +21,7 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 60px;
   z-index: 2;
@@ -28,59 +30,54 @@ body {
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
-/* line 39, ../../compass/sass/style.scss */
+/* line 40, ../../compass/sass/style.scss */
 #wrap > .container {
   padding-top: 60px;
 }
 
-/* line 42, ../../compass/sass/style.scss */
+/* line 43, ../../compass/sass/style.scss */
 .container .credit {
   margin: 20px 0;
 }
 
-/* line 46, ../../compass/sass/style.scss */
+/* line 47, ../../compass/sass/style.scss */
 code {
   font-size: 80%;
 }
 
-/* line 50, ../../compass/sass/style.scss */
-#photo img {
-  width: 400px;
-}
-
-/* line 54, ../../compass/sass/style.scss */
+/* line 55, ../../compass/sass/style.scss */
 .navbar-brand {
   padding: 4px 15px;
 }
 
-/* line 57, ../../compass/sass/style.scss */
+/* line 58, ../../compass/sass/style.scss */
 .navbar-brand img {
   width: 46px;
 }
 
-/* line 60, ../../compass/sass/style.scss */
+/* line 61, ../../compass/sass/style.scss */
 .navbar-nav > li {
   padding-right: 5px;
 }
 
-/* line 63, ../../compass/sass/style.scss */
+/* line 64, ../../compass/sass/style.scss */
 .navbar {
   margin: 0;
   border-radius: 0;
   line-height: 50px;
 }
 
-/* line 68, ../../compass/sass/style.scss */
+/* line 69, ../../compass/sass/style.scss */
 .footer.custom-bg {
   padding: 10px;
 }
 
-/* line 71, ../../compass/sass/style.scss */
+/* line 72, ../../compass/sass/style.scss */
 .custom-bg {
   background-color: darkgray;
   text-align: center;
 }
-/* line 74, ../../compass/sass/style.scss */
+/* line 75, ../../compass/sass/style.scss */
 .custom-bg input[voter="vote-actions"] {
   width: 100px;
   box-shadow: 1px 1px 5px black;
