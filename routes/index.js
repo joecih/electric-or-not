@@ -9,7 +9,7 @@ var session = require('express-session');
 
 // var Page = require('../public/js/slitslider/slider_module.js');
 var mongoClient = mongo.MongoClient;
-var mongoUrl = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost:27017/electricOrNot'; // Mongodb path
+var mongoUrl = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost:27017/electricOrNot'; // Mongodb path
 var db;
 var allPhotos;
 // var _holdPrevCar = [];
