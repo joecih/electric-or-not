@@ -78,7 +78,14 @@ router.get('/', function(req, res, next) {
 
 
       //res.console.log("current: " + getRandomImage + " | prev: " + _val + " _holdPrevCar.lgth: " + _holdPrevCar.length);
-      res.render('index', {
+
+      // FIXME: Uncomment to show normal view
+      // res.render('index', {
+      //   currentCar: carResult[getRandomImage],
+      //   prevCar: carResult[0]
+      // });
+
+      res.json({
         currentCar: carResult[getRandomImage],
         prevCar: carResult[0]
       });
@@ -125,32 +132,3 @@ router.post('/poser', function(req, res, next) {
 });
 
 module.exports = router;
-
-
-// function getRandomObj(_state) {
-//   var dataOptions = {};
-//
-//   _state = (_state === !_state) ? true : false;
-//   console.log(_state);
-//
-//   if (_state) {
-//     dataOptions = {
-//       slideNum: 1,
-//       dataOrientation: 'horizontal',
-//       dataSlice1Rotation: -25,
-//       dataSlice2Rotation: -25,
-//       dataSlice1Scale: 2,
-//       dataSlice2Scale: 2
-//     }
-//   } else {
-//     dataOptions = {
-//       slideNum: 1,
-//       dataOrientation: 'vertical',
-//       dataSlice1Rotation: 10,
-//       dataSlice2Rotation: -15,
-//       dataSlice1Scale: 1.5,
-//       dataSlice2Scale: 1.5
-//     }
-//   }
-//   return dataOptions;
-// }
