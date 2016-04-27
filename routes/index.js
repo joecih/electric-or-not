@@ -87,7 +87,8 @@ router.get('/', function(req, res, next) {
 
       res.json({
         currentCar: carResult[getRandomImage],
-        prevCar: carResult[0]
+        prevCar: carResult[0],
+        allCars: carResult
       });
     });
   }
