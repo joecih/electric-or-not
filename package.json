@@ -12,10 +12,13 @@
     "ejs": "^2.4.1",
     "express": "~4.13.1",
     "express-chrome-logger": "^0.1.5",
+    "express-session": "^1.13.0",
     "jade": "~1.11.0",
+    "koekje": "0.0.4",
     "mongodb": "^2.1.16",
     "morgan": "~1.6.1",
     "request": "^2.72.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "window.name": "0.0.3"
   }
 }

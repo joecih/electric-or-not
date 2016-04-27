@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col-md-6">
             <form class="form-inline" action="electric" method="post">
-                <input type="hidden" name="photo" value="<%=carImage.imageSrc%>">
+                <input type="hidden" name="photo" value="<%=currentCar.imageSrc%>">
                 <input type="submit" voter="vote-actions" class="btn btn-info" value="Electric!">
             </form>
         </div>
         <div class="col-md-6">
         <form class="form-inline" action="poser" method="post" name="photo">
-            <input type="hidden" value="<%=carImage.imageSrc%>">
+            <input type="hidden" value="<%=currentCar.imageSrc%>">
             <input type="submit" voter="vote-actions" class="btn btn-info" Value="Poser">
         </form>
       </div>

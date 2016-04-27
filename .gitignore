@@ -2,3 +2,4 @@ node_modules/
 compass/
 vendors/
 .sass-cache/
+nohup.out

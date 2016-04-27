@@ -4,21 +4,26 @@ var request = require('request');
 var mongo = require('mongodb');
 var http = require('http');
 var fs = require('fs');
+var session = require('express-session');
+
+
 // var Page = require('../public/js/slitslider/slider_module.js');
 var mongoClient = mongo.MongoClient;
-var mongoUrl = process.env.MONGODB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost:27017/electricOrNot'; // Mongodb path
+var mongoUrl = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost:27017/electricOrNot'; // Mongodb path
 var db;
 var allPhotos;
-var _holdPrevCar = [];
+// var _holdPrevCar = [];
+
 
 // connect to the mongo database
 mongoClient.connect(mongoUrl, function(error, database) {
   database.collection('cars').find().toArray(function(error, result) {
     allPhotos = result;
     db = database;
-    //console.log(allPhotos);
   });
 });
+
+var sess;
 
 
 /* GET home page. */
@@ -36,13 +41,19 @@ router.get('/', function(req, res, next) {
   //   val: 1
   // });
 
+  //res.console.log(sess);
+
+  // Read images directory and get any local path names for images.
   fs.readdir("./public/images/", function(err, files) {
+    db.collection('cars').remove({}); // Clear'em Out
+
     if (err) {
       res.console.log("[ERROR] : " + err);
     }
 
     files.forEach(function(file) {
-      if (file.includes('.jpg') || file.includes('.png')) {
+      if (file.includes('.jpg') || file.includes('.png') || file.includes('.jpeg')) {
+
         db.collection('cars').insertOne({
           imageSrc: file
         }, function(err, result) {
@@ -58,19 +69,18 @@ router.get('/', function(req, res, next) {
 
   function getCars() {
     db.collection('cars').find({}).toArray(function(error, carResult) {
-      var _val;
-      //var _ranNum = Math.floor(Math.random() * 2);
-      var getRandomImage = Math.floor(Math.random() * carResult.length);
-      _holdPrevCar.push(getRandomImage);
-      if (_holdPrevCar.length > 2) {
-        _holdPrevCar.shift(); // Clear out previous car
-      }
 
-      _val = (_holdPrevCar.length !== 0) ? _holdPrevCar[0] : 0;
-      //res.console.log("current: " + getRandomImage + " | prev: " + _holdPrevCar[0]);
+      var getRandomImage = Math.floor(Math.random() * carResult.length);
+
+      // if (getRandomImage !== session.getItem('prevCar')) {
+      //   res.console.log(session.getItem('prevCar'));
+      // }
+
+
+      //res.console.log("current: " + getRandomImage + " | prev: " + _val + " _holdPrevCar.lgth: " + _holdPrevCar.length);
       res.render('index', {
-        carImage: carResult[getRandomImage],
-        prevCar: carResult[_val]
+        currentCar: carResult[getRandomImage],
+        prevCar: carResult[0]
       });
     });
   }
